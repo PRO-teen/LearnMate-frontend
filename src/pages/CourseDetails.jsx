@@ -13,7 +13,8 @@ const CourseDetails = () => {
 
   const handleBuyNow = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/payment/orders', {
+      const API = import.meta.env.VITE_API_URL;
+      const res = await fetch(`${API}/api/payment/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
