@@ -32,7 +32,7 @@ const CourseDetails = () => {
         description: 'Demo Course Access',
         order_id: data.id,
         handler: async function (response) {
-          const verifyRes = await fetch('http://localhost:5000/api/payment/verify', {
+          const verifyRes = await fetch(`${API}/api/payment/verify`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
