@@ -8,18 +8,18 @@ function Navbar() {
 
   useEffect(() => {
     // Get current user information
-    axios.get("http://localhost:5000/api/current_user", { withCredentials: true })
+    axios.get(`${import.meta.env.VITE_API_URL}/api/current_user`, { withCredentials: true })
       .then(res => setUser(res.data))
       .catch(err => console.log(err));
   }, []);
 
   const handleLogin = () => {
-    window.location.href = "http://localhost:5000/auth/google";
-  };
+  window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
+};
 
-  const handleLogout = () => {
-    window.location.href = "http://localhost:5000/auth/logout";
-  };
+const handleLogout = () => {
+  window.location.href = `${import.meta.env.VITE_API_URL}/auth/logout`;
+};
 
   const toggleDropdown = () => {
     setDropdownVisible(!dropdownVisible);
