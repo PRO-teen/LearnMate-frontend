@@ -3,10 +3,11 @@ import axios from "axios";
 
 function SignInPage() {
   const [user, setUser] = useState(null);
+  
 
   useEffect(() => {
-    // Get current user information from the backend
-    axios.get("http://localhost:5000/api/current_user", { withCredentials: true })
+
+    axios.get(`${import.meta.env.VITE_API_URL}/api/current_user`, { withCredentials: true })
       .then(res => setUser(res.data))
       .catch(err => console.log(err));
   }, []);
