@@ -8,17 +8,17 @@ function Navbar() {
 
   useEffect(() => {
     // Get current user information
-    axios.get(`${import.meta.env.VITE_API_URL}/api/current_user`, { withCredentials: true })
+    axios.get("https://learnmate-backend-8fei.onrender.com/auth/google",{ withCredentials: true })
       .then(res => setUser(res.data))
       .catch(err => console.log(err));
   }, []);
 
   const handleLogin = () => {
-  window.location.href = `${import.meta.env.VITE_API_URL}/auth/google`;
+  window.location.href = "https://learnmate-backend-8fei.onrender.com/auth/google";
 };
 
 const handleLogout = () => {
-  window.location.href = `${import.meta.env.VITE_API_URL}/auth/logout`;
+  window.location.href = "https://learnmate-backend-8fei.onrender.com/auth/google";
 };
 
   const toggleDropdown = () => {
